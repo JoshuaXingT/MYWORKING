@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Pikpak Automatic Registration</title>
+    <script type="text/javascript" src="./js/axios.js"></script>
+    <script type="text/javascript" src="./js/vue3.js"></script>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/pako/2.1.0/pako.es5.js"></script> -->
+</head>
+
+<body>
+    <div id="big_box">
+        <div id="content" ref="content">
+            <div id="title">
+                <img src="https://mypikpak.com/favicon-32x32.png" alt="ERROR"
+                    style="width: 32px;height: 32x;margin-right: 10px;border-radius: 2px;">
+                <b>Pikpak Automatic Registration</b>
+            </div>
+            <div id="i_error" v-if="notice" style="display: flex;background-color: pink;font-size: 13px;color: red;width: 100%;">
+                <p>
+                    {{ notice }}
+                </p>
+            </div>
+            <div style="padding: 5px;" class="pTable">
+                <div class="model_input_box">
+                    <span>TestApiKey:</span>
+                    <input type="password" placeholder="Mailbox-interface-key【：Up233uP666XXXXXX】" v-model="api_key" class="model_input">
+                </div>
+                 
+                <div style="flex-wrap: wrap;align-items: flex-start;background-color: white;margin: 10px;color: blue;border-radius: 2px;">
+                    <b>Note: If you have not obtained the key value, please click </b>
+                    <a href="https://apilayer.com/marketplace/temp_mail-api" style="color: red;">This Link</a>
+                    <b> to log in to the API-Key of the application test</b>
+                </div>
+                <div class="model_input_box">
+                    <span>Invite Code:</span>
+                    <input type="text" placeholder="Invite-code【：8368XXXX】" v-model="invite_code" class="model_input">
+                </div>
+                <div class="model_input_box">
+                    <span>Default Key:</span>
+                    <input type="password" placeholder="Personal-key【：XXX】" v-model="UP_key" class="model_input">
+                </div>
+                <div class="model_input_box">
+                    <button class="btn" @click="starting()">Running!</button>
+                </div>
+            </div>
+        </div>
+        <div id="return_data">
+            <p style="color: blue;font-size: 19px;">Request State:</p>
+            <ul>
+                <li v-for="(item,index) in List" :key="index">
+                    <span>{{item.notice}}</span>
+                    <span :style="item.return ? {color : 'green'} : {color : 'red'}">{{item.return ? item.return:
+                        'warning!'}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="./js/index2.js"></script>
+</body>
+
+</html>

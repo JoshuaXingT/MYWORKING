@@ -1,0 +1,189 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background-image: url("./images/bg.png");
+    /* 设置半透明背景 */
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    align-items: center;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+#big_box {
+    display: flex;
+    flex-wrap: wrap;
+    letter-spacing: 0.1em;
+    position: relative;
+    font-weight: bold;
+    overflow: hidden;
+    overflow-y: scroll;
+    justify-content: space-between;
+}
+
+#content {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    max-height: 560px;
+}
+
+
+#title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-weight: bold;
+    height: 55px;
+    background-color: rgb(65, 125, 168);
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+#title b,
+#title img {
+    margin: 0;
+}
+
+.pTable {
+    flex: 1;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.model_input_box {
+    width: 100%;
+    margin: 10px auto;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.model_input_box>span {
+    /* text-align: center; */
+    border-radius: 2px;
+    margin-right: 5px;
+    display: inline-block;
+    height: 40px;
+    font-size: 16px;
+    width: 140px;
+    line-height: 40px;
+    background-color: white;
+}
+
+.model_input {
+    margin: 5px 0;
+    height: 35px;
+    flex: 1;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding-left: 10px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
+}
+
+.btn {
+    font-size: 14px;
+    font-weight: bold;
+    color: blue;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#return_data {
+    background-image: url('./images/return.png');
+    background-size: cover;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    flex: 1;
+    max-height: 560px;
+    overflow: hidden;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    max-height: 560px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+
+#return_data>ul {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#return_data ul,
+#return_data li {
+    margin: 0;
+}
+
+#return_data>ul>li {
+    margin-top: 20px;
+    border-radius: 2px;
+    padding: 15px 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: black;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+#return_data>ul>li>span {
+    margin: 0;
+}
+
+
+@media (max-width: 425px) {
+    #big_box {
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    #big_box {
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+@media (min-width: 769px) {
+    #big_box {
+        width: 1000px;
+        border-radius: 3px;
+        height: 560px;
+    }
+
+    #content {
+        width: 500px;
+    }
+    #return_data {
+        max-height: 560px;
+    }
+}
